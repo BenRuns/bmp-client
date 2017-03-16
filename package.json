@@ -1,0 +1,40 @@
+{
+  "name": "browsermob-proxy-client",
+  "description": "Javascript client for browsermob-proxy",
+  "keywords": [
+    "selenium",
+    "test",
+    "selenium-webdriver",
+    "proxy",
+    "tests",
+    "browsermob-js-client",
+    "har"
+  ],
+  "version": "0.0.1",
+  "author": "Ben Patterson <ben@benpatterson.io>",
+  "repository": {
+    "type": "",
+    "url": ""
+  },
+  "homepage": "https://github.com/zzo/browsermob-node",
+  "main": "./browsermob.js",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "jsdoc": "^3.4.3",
+    "lodash": "^4.17.4",
+    "mocha": "^3.2.0",
+    "request-promise-native": "^1.0.3"
+  },
+  "scripts": {
+    "test": "mocha",
+    "install-browsermob": "curl --location  https://github.com/lightbody/browsermob-proxy/releases/download/browsermob-proxy-2.1.4/browsermob-proxy-2.1.4-bin.zip > temp.zip;unzip temp.zip; rm temp.zip",
+    "start-browsermob": "sh ./browsermob-proxy-2.1.4/bin/browsermob-proxy",
+    "jsdoc": "jsdoc -r -c ./docs/conf.json"
+  },
+  "jshintConfig": {
+    "esnext": true
+  },
+  "dependencies": {
+    "request-promise-native": "^1.0.3"
+  }
+}
