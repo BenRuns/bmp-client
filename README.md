@@ -1,4 +1,4 @@
-BrowserMob  Proxyy Client
+BrowserMob  Proxy Client
 ===========================
 
 A library built to interact with browsermob's REST Api
