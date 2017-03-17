@@ -24,7 +24,7 @@ A library built to interact with browsermob's REST Api
     .then( () =>  {
       let driver = new webdriver.Builder()
        .forBrowser('phantomjs')
-       .setProxy(sproxy.manual({http: 'localhost:' +client.proxy.port}))
+       .setProxy(proxy.manual({http: 'localhost:' +client.proxy.port}))
        .build();
 
        return  driver.get("http://search.yahoo.com")
