@@ -1,7 +1,7 @@
 const chai = require('chai');
 const assert = chai.assert;
 
-const BrowserMob = require('../browser-mob');
+const BrowserMob = require('../index');
 
 before(function(){
   //TODO
