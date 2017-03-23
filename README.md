@@ -1,5 +1,5 @@
 
-BrowserMob Proxy Client
+# BrowserMob Proxy Client
 
 A library built to interact with  [browsermob-proxy][1]'s  REST Api
 
