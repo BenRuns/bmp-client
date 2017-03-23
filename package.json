@@ -10,7 +10,7 @@
     "browsermob-proxy-client",
     "har"
   ],
-  "version": "0.0.1",
+  "version": "0.0.2",
   "homepage": "https://github.com/BenRuns/bmp-client",
   "author": "Ben Patterson <ben@benpatterson.io>",
   "repository": {
@@ -29,15 +29,18 @@
     "chai": "^3.5.0",
     "jsdoc": "^3.4.3",
     "lodash": "^4.17.4",
-    "mocha": "^3.2.0"
+    "mocha": "^3.2.0",
+    "phantomjs-prebuilt": "^2.1.14",
+    "selenium-webdriver": "^3.3.0"
   },
   "scripts": {
     "test": "mocha",
     "install-browsermob": "curl --location  https://github.com/lightbody/browsermob-proxy/releases/download/browsermob-proxy-2.1.4/browsermob-proxy-2.1.4-bin.zip > temp.zip;unzip temp.zip; rm temp.zip",
-    "start-browsermob": "sh ./browsermob-proxy-2.1.4/bin/browsermob-proxy",
-    "jsdoc": "jsdoc -r -c ./docs/conf.json"
+    "start-browsermob": "sh ./browsermob-proxy-2.1.4/bin/browsermob-proxy"
   },
   "jshintConfig": {
-    "esnext": true
+    "esversion": 6,
+    "node": true,
+    "mocha":true
   }
 }
