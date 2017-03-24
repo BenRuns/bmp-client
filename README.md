@@ -47,7 +47,7 @@ Synchronous function that instantiates a new client
         browserMob:{ // *optional* details on where browsermob is running
            host:'localhost',
            port: 8080,
-           protocol:http
+           protocol:'http'
          },
          proxy:{ // *optional*
            port:8081,
@@ -92,7 +92,7 @@ starts a port to use
 
       {
         port: 'specify a port to start the proxy on',
-        bindAddress=192.168.1.222    * if working in a multi-home env *
+        bindAddress: '192.168.1.222'    // if working in a multi-home env 
       }
 
 ##### client.end()
