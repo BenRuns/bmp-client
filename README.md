@@ -111,7 +111,7 @@ Resolves to { proxyList: [ { port: 8081 }, { port: 8082 }, { port: 8083 } ]
 ### Testing
 1. Install dependencies `npm install`
 
-2. Install and run [browsermob-proxt][1]
+2. Install and run [browsermob-proxy][1]
 
        npm run install-browsermob
        npm run start-browsermob
