@@ -10,7 +10,7 @@
     "browsermob-proxy-client",
     "har"
   ],
-  "version": "0.0.2",
+  "version": "0.0.3",
   "homepage": "https://github.com/BenRuns/bmp-client",
   "author": "Ben Patterson <ben@benpatterson.io>",
   "repository": {
@@ -23,12 +23,11 @@
   "main": "./index.js",
   "dependencies": {
     "request": "^2.81.0",
+    "lodash": "^4.17.4",
     "request-promise-native": "^1.0.3"
   },
   "devDependencies": {
     "chai": "^3.5.0",
-    "jsdoc": "^3.4.3",
-    "lodash": "^4.17.4",
     "mocha": "^3.2.0",
     "phantomjs-prebuilt": "^2.1.14",
     "selenium-webdriver": "^3.3.0"
