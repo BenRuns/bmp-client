@@ -51,7 +51,7 @@ Synchronous function that instantiates a new client
          },
          proxy:{ // *optional*
            port:8081,
-           bindAddress: `192.168.1.222`.
+           bindAddress: `192.168.1.222`
          }
       }
 
