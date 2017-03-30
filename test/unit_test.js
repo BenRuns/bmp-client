@@ -34,6 +34,16 @@ describe('instance methods', function(){
     .then(() => defaultProxy.end());
   });
 
+  describe('callRest', function(){
+    it("allows the user to call browsermob's REST API directly", function(){
+      return defaultProxy.callRest(`proxy/${ defaultProxy.proxy.port }/hosts` ,'POST', {"example.com": "1.2.3.4"})
+      .then( response => {
+         //TODO test something
+      });
+    });
+  });
+
+
   describe('createHar', function(){
     it("creates a har", function(){
 
@@ -47,8 +57,21 @@ describe('instance methods', function(){
   describe('getHar', function(){
     it("gets har data", function(){
       return defaultProxy.createHar()
-      .then( response => defaultProxy.getHar())
-      //TODO test something
+      .then( response => defaultProxy.getHar() )
+      .then( har => {
+        assert(har.log, "should get back something");
+      });
+    });
+  });
+
+  describe('setLimits', function(){
+    it("assigns limits to the object", function(){
+      return defaultProxy.setLimits({
+        enable:true
+      })
+      .then(function(){
+        assert(defaultProxy.limits,"Should be assigned");
+      });
     });
   });
 
@@ -63,7 +86,7 @@ describe('instance methods', function(){
       return proxy.start()
       .then( response => {
         assert.equal(proxy.proxy.port, response.port );
-        assert(response.port, 'should return somethingin line { port:8081}' );
+        assert(response.port, 'should return something like { port:8081}' );
       });
     });
   });

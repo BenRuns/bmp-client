@@ -55,6 +55,26 @@ Synchronous function that instantiates a new client
          }
       }
 
+##### client.callRest(url, method, data)
+Method to make direct calls to browsermob-proxy's REST API
+see [browsermob-proxy](https://github.com/lightbody/browsermob-proxy) for availabel urls. Returns a promise
+
+- url
+
+  String - 'proxy/8089/har'
+- method
+
+  String - 'GET, POST, DELETE, PUT'
+
+- data
+
+  Object - { enable: true }
+
+
+##### client.closeProxies()
+Returns a promise that closes all proxies running
+
+
 ##### client.createHar(options)
 Returns a promise. Creates a har file on browsermob
 
@@ -79,12 +99,39 @@ Returns a promise. Creates a har file on browsermob
       }
 
 
+
+##### client.end()
+Returns a promise that stops the proxy port
+
+
 ##### client.getHar()
 Returns a promise that resolves to a har in JSON format
 
+##### client.listProxies()
+Resolves to { proxyList: [ { port: 8081 }, { port: 8082 }, { port: 8083 } ]
 
-##### client.closeProxies()
-Returns a promise that closes all proxies running
+
+##### client.setLimits(options)
+sets limits on the proxy
+- options
+
+      {
+        downstreamKbps: - Sets the downstream bandwidth limit in kbps. Optional.
+
+        upstreamKbps: - Sets the upstream bandwidth limit kbps. Optional, by default unlimited.
+
+        downstreamMaxKB: - Specifies how many kilobytes in total the client is allowed to download through the proxy. Optional, by default unlimited.
+
+        upstreamMaxKB: - Specifies how many kilobytes in total the client is allowed to upload through the proxy. Optional, by default unlimited.
+
+        latency: - Add the given latency to each HTTP request. Optional, by default all requests are invoked without latency.
+
+        enable: - A boolean that enable bandwidth limiter. Optional, by default to "false", but setting any of the properties above will implicitly enable throttling
+
+        payloadPercentage: - Specifying what percentage of data sent is payload, e.g. use this to take into account overhead due to tcp/ip. Optional.
+
+        maxBitsPerSecond: - The max bits per seconds you want this instance of StreamManager to respect. Optional.
+      }
 
 ##### client.start(options)
 starts a port to use
@@ -92,18 +139,10 @@ starts a port to use
 
       {
         port: 'specify a port to start the proxy on',
-        bindAddress: '192.168.1.222'    // if working in a multi-home env 
+        bindAddress: '192.168.1.222'    // if working in a multi-home env
       }
 
-##### client.end()
-Returns a promise that stops the proxy port
 
-
-
-
-##### client.listProxies()
-
-Resolves to { proxyList: [ { port: 8081 }, { port: 8082 }, { port: 8083 } ]
 
 
 ### Development
