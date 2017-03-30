@@ -21,7 +21,7 @@ class BrowserMobClient {
 
 
   createHar(options){
-    return this. _callProxy('har','PUT', options);
+    return this._callProxy('har','PUT', options);
   }
 
 
@@ -30,7 +30,7 @@ class BrowserMobClient {
   }
 
   closeProxies(){
-    var that = this;
+    let that = this;
     return this.listProxies()
     .then( ports => {
       return Promise.all(
@@ -48,8 +48,8 @@ class BrowserMobClient {
   }
 
   start(options){
-    var that = this;
-    return that.callRest('proxy', 'POST', options ) 
+    let that = this;
+    return that.callRest('proxy', 'POST', options )
     .then( proxyInfo => {
       that.proxy = proxyInfo;
       return proxyInfo;
@@ -58,9 +58,9 @@ class BrowserMobClient {
 
 
   end(port){
-    var that = this;
+    let that = this;
     if (!port && !that.proxy) { return Promise.resolve(); }
-    return this. _callProxy('','DELETE', {}, port)
+    return this. _callProxy(null,'DELETE', null, port)
     .then(data =>{
       if ( !port || that.proxy && that.proxy.port == port  ){
         delete that.proxy;
