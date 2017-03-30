@@ -49,12 +49,7 @@ class BrowserMobClient {
 
   start(options){
     var that = this;
-    return request({
-       method:'POST',
-       json:true,
-       body: options || that.proxy || {},
-       uri: `${ that.browserMob.uri }/proxy/`
-    })
+    return that.callRest('proxy', 'POST', options ) 
     .then( proxyInfo => {
       that.proxy = proxyInfo;
       return proxyInfo;
