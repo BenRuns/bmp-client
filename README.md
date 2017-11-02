@@ -57,7 +57,7 @@ Synchronous function that instantiates a new client
 
 ##### client.callRest(url, method, data)
 Method to make direct calls to browsermob-proxy's REST API
-see [browsermob-proxy][1] for availabel urls. Returns a promise.
+see [browsermob-proxy][1] for available urls. Returns a promise.
 
 - url
 
