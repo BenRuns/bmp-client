@@ -25,7 +25,7 @@ describe('instance methods', function(){
   var defaultProxy;
 
   beforeEach(function(){
-    defaultProxy = BrowserMob.createClient();
+    defaultProxy = BrowserMob.createClient({ host:require('ip').address() });
     return defaultProxy.start();
   });
 
