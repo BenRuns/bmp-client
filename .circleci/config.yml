@@ -33,7 +33,7 @@ jobs:
             - node_modules
             - ./browsermob-proxy-2.1.4/
           key: v1-dependencies-{{ checksum "package.json" }}
-      - run: npm start-browsermob;
+      - run: npm run start-browsermob;
 
       # run tests!
       - run: npm test
