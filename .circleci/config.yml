@@ -38,4 +38,4 @@ jobs:
       - run: npm run start-browsermob &
 
       # run tests!
-      - run: npm test
+      - run: sleep 10 && npm test
