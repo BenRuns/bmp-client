@@ -3,6 +3,7 @@
 const _ = require('lodash');
 const chai = require('chai');
 const assert = chai.assert;
+const localhost = require('ip').address()
 
 const BrowserMob = require('../index');
 
@@ -11,8 +12,8 @@ describe('Static Methods', function(){
 
     it ("instantiates a client", function(){
       let client = BrowserMob.createClient({
-          BrowserMob:{ host:'localhost',  port: 8080 },
-          selenium: { host:'localhost', port: 4444 }
+          BrowserMob:{ host:localhost,  port: 8080 },
+          selenium: { host:localhost, port: 4444 }
        });
        assert(client instanceof BrowserMob);
     });
@@ -25,7 +26,7 @@ describe('instance methods', function(){
   var defaultProxy;
 
   beforeEach(function(){
-    defaultProxy = BrowserMob.createClient({ host:require('ip').address() });
+    defaultProxy = BrowserMob.createClient({ host:localhost });
     return defaultProxy.start();
   });
 
