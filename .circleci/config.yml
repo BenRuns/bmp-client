@@ -20,7 +20,7 @@ jobs:
       - checkout
       - run:
           name: update-node
-          command: 'curl -sL https://deb.nodesource.com/setup_8.x | bash; apt-get install -y nodejs'
+          command: 'curl -sL https://deb.nodesource.com/setup_8.x | sudo bash; apt-get install -y nodejs'
       # Download and cache dependencies
       - restore_cache:
           keys:
