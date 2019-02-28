@@ -57,11 +57,11 @@ Synchronous function that instantiates a new client
 
 ##### client.callRest(url, method, data)
 Method to make direct calls to browsermob-proxy's REST API
-see [browsermob-proxy][1] for available urls. Returns a promise.
+see [browsermob-proxy](https://github.com/lightbody/browsermob-proxy#rest-api) for available urls. Returns a promise.
 
 - url
 
-  String - 'proxy/8089/har'
+  String - '/har' (see https://github.com/lightbody/browsermob-proxy#rest-api, for a list of endpoints) 
 - method
 
   String - 'GET, POST, DELETE, PUT'
