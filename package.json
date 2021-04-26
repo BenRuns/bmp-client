@@ -28,7 +28,7 @@
   },
   "devDependencies": {
     "ip":"1.1.5",
-    "chai": "4.2.0",
+    "chai": "4.3.4",
     "mocha": "6.1.4",
     "phantomjs-prebuilt": "2.1.16",
     "selenium-webdriver": "3.6.0"
