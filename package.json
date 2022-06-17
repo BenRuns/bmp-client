@@ -29,7 +29,7 @@
   "devDependencies": {
     "ip":"1.1.8",
     "chai": "4.3.6",
-    "mocha": "6.2.3",
+    "mocha": "10.0.0",
     "phantomjs-prebuilt": "2.1.16",
     "selenium-webdriver": "4.2.0"
   },
