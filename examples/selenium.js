@@ -5,37 +5,34 @@ const webdriver = require('selenium-webdriver');
 const By = webdriver.By;
 const until = webdriver.until;
 const selProxy = require('selenium-webdriver/proxy');
-//const bmpClient = require('browsermob-proxy-client').createClient();
 const bmpClient = require('../index').createClient();
+//need to require this or it looks for a globally installed chromedriver
+const chromedriver = require('chromedriver');
 
-function main(){
-  return bmpClient.start()
-  .then( () =>  bmpClient.createHar())
-  .then( () =>  {
-    let driver = new webdriver.Builder()
-     .forBrowser('phantomjs')
-     .setProxy(selProxy.manual({http: 'localhost:' + bmpClient.proxy.port}))
-     .build();
+async function runBmp() {
+  await bmpClient.start();
+  await bmpClient.createHar();
+  const driver = new webdriver.Builder()
+    .forBrowser('chrome')
+    .setProxy(selProxy.manual({ http: 'localhost:' + bmpClient.proxy.port }))
+    .build();
 
-     return driver.get("http://search.yahoo.com")
-     .then( () => bmpClient.getHar() )
-     .then( harData => {
-        //do something
-          console.log(harData);
-      });
-  })
-  .then( () => bmpClient.end() );
+
+  await driver.get("https://search.yahoo.com");
+  const harData = await bmpClient.getHar();
+  //do something
+  console.log(harData);
+  await bmpClient.end();
 }
 
-
-if (require.main === module) {
-  return main()
-  .then(function(){
+runBmp()
+  .then(function () {
     console.log("Finished Successfully");
     process.exit([0]);
   })
-  .catch(function(err){
+  .catch(function (err) {
     console.error(err.message);
+    console.error(err.stack)
     process.exit([1]);
- });
-}
+  });
+
