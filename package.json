@@ -27,10 +27,10 @@
     "request-promise-native": "^1.0.3"
   },
   "devDependencies": {
-    "ip":"1.1.8",
     "chai": "4.3.6",
+    "chromedriver": "^103.0.0",
+    "ip": "1.1.8",
     "mocha": "10.0.0",
-    "phantomjs-prebuilt": "2.1.16",
     "selenium-webdriver": "4.3.1"
   },
   "scripts": {
@@ -41,6 +41,6 @@
   "jshintConfig": {
     "esversion": 6,
     "node": true,
-    "mocha":true
+    "mocha": true
   }
 }
