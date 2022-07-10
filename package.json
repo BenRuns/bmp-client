@@ -10,7 +10,7 @@
     "browsermob-proxy-client",
     "har"
   ],
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "https://github.com/BenRuns/bmp-client",
   "author": "Ben Patterson <ben@benpatterson.io>",
   "repository": {
