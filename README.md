@@ -16,7 +16,7 @@ const webdriver = require('selenium-webdriver');
 const By = webdriver.By;
 const until = webdriver.until;
 const selProxy = require('selenium-webdriver/proxy');
-const bmpClient = require('../index').createClient();
+const bmpClient = require('browsermob-proxy-client').createClient();
 //need to require this or it looks for a globally installed chromedriver
 const chromedriver = require('chromedriver');
 
