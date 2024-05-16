@@ -1,6 +1,5 @@
 'use strict';
 const _ = require('lodash');
-const request = require('request-promise-native');
 
 const defaultConfig = {
   browserMob:{ host:'localhost',  port: 8080, protocol:'http' },
@@ -72,13 +71,20 @@ class BrowserMobClient {
     return this.callRest('proxy','GET');
   }
 
-  callRest(url ,method, data ){
-    return request({
-       method:method,
-       json:true,
-       body:data || {},
-       uri: `${ this.browserMob.uri }/${ url }`
-    });
+  async callRest(url ,method, data ){
+    const params = {
+      method:method
+    };
+    if (data) {
+      params.headers = { 'Content-Type': 'application/x-www-form-urlencoded' };
+      params.body = new URLSearchParams(data);
+    }
+    const response = await fetch(`${ this.browserMob.uri }/${ url }`, params);
+    const type = response.headers.get('content-type');
+    if (type && type === 'application/json')
+      return response.json();
+    else
+      return response.text();
   }
 
   _callProxy(ext, method, data, proxyPort){
