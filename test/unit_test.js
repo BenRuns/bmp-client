@@ -90,6 +90,15 @@ describe('instance methods', function(){
         assert(response.port, 'should return something like { port:8081}' );
       });
     });
+
+    it("assign predefined port to the client", function(){
+      var proxy = BrowserMob.createClient();
+      return proxy.start({ port: 8180 })
+      .then( response => {
+        assert.equal(proxy.proxy.port, response.port );
+        assert.equal(response.port, 8180 );
+      });
+    });
   });
 
   describe('end', function(){
