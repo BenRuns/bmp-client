@@ -30,7 +30,7 @@
     "chai": "4.3.6",
     "chromedriver": "110.0.0",
     "ip": "1.1.8",
-    "mocha": "10.2.0",
+    "mocha": "10.7.3",
     "selenium-webdriver": "4.5.0"
   },
   "scripts": {
